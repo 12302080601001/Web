@@ -1,0 +1,76 @@
+/* Basic Body & Theme */
+body {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Light Mode (Default) */
+:root {
+    --bg-color: #f8f9fa;
+    --text-color: #212529;
+    --card-bg: #ffffff;
+    --border-color: #dee2e6;
+    --link-color: #0d6efd;
+    --header-bg: #e9ecef;
+}
+
+/* Dark Mode Theme */
+body.dark-mode {
+    --bg-color: #212529;
+    --text-color: #f8f9fa;
+    --card-bg: #343a40;
+    --border-color: #495057;
+    --link-color: #6ea8fe;
+    --header-bg: #495057;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Header */
+.app-header {
+    background-color: var(--header-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+}
+
+/* Cards */
+.suggestion-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+.suggestion-card .card-footer {
+    background-color: transparent;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Status Badges */
+.badge.status-pending { background-color: #ffc107; color: #000; }
+.badge.status-approved { background-color: #198754; }
+.badge.status-implemented { background-color: #0dcaf0; }
+
+/* Vote Bar */
+.vote-bar-container {
+    height: 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+}
+
+.vote-bar-upvotes {
+    background-color: #198754;
+    transition: width 0.3s ease;
+}
+
+.vote-bar-downvotes {
+    background-color: #dc3545;
+    transition: width 0.3s ease;
+}
+
+/* Dark mode toggle */
+#darkModeToggle {
+    cursor: pointer;
+}

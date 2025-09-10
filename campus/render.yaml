@@ -1,0 +1,30 @@
+# This file tells Render how to deploy your PHP Web Service
+services:
+  # This is your PHP Web Service
+  - type: web
+    name: adit-suggestion-box
+    env: php # This correctly sets the PHP environment
+    startCommand: heroku-php-apache2
+    plan: free
+    # This section links to the database you already created
+    envVars:
+      - key: DB_HOST
+        fromService:
+          type: mysql
+          name: adit-database # IMPORTANT: This must be the exact name of your database on Render
+          property: host
+      - key: DB_USER
+        fromService:
+          type: mysql
+          name: adit-database
+          property: user
+      - key: DB_PASS
+        fromService:
+          type: mysql
+          name: adit-database
+          property: password
+      - key: DB_NAME
+        fromService:
+          type: mysql
+          name: adit-database
+          property: database
